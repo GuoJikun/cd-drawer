@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/drawer.esm.js"></script>
-    <script nomodule src="/build/drawer.js"></script>
-  </head>
-  <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/drawer.esm.js"></script>
+  <script nomodule src="/build/drawer.js"></script>
+</head>
+
+<body>
+  <button id="button-1">打开 Drawer</button>
+  <ce-drawer header="Drawer Header" id="drawer-1" show-header>
+    <div>
+      <p>Drawer Content</p>
+      <p>Drawer Content</p>
+      <p>Drawer Content</p>
+    </div>
+  </ce-drawer>
+
+
+</body>
+<script type="module">
+  const drawer = document.querySelector('#drawer-1');
+  const button = document.querySelector('#button-1');
+  button.addEventListener('click', () => {
+    drawer.open()
+  });
+</script>
+
 </html>
